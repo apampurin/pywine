@@ -1,0 +1,6 @@
+services:
+  pywine:
+    build: .
+    image: pywinemt5
+    volumes:
+      - ./scripts:/opt/scripts

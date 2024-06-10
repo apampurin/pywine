@@ -18,6 +18,8 @@ $wslmounts
 	sleep 5
 fi
 
+cd /opt/scripts
+
 if [ $# -gt 0 ]
 then
 	exec "$@"

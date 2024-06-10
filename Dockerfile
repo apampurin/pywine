@@ -7,6 +7,8 @@ ENV WINEPREFIX /opt/wineprefix
 COPY wine-init.sh SHA256SUMS.txt keys.gpg /tmp/helper/
 COPY mkuserwineprefix entrypoint.sh /opt/
 
+RUN mkdir /opt/scripts
+
 # Prepare environment
 RUN xvfb-run sh /tmp/helper/wine-init.sh
 
@@ -32,7 +34,7 @@ RUN umask 0 && cd /tmp/helper && \
 
 # Install some python software
 RUN umask 0 && xvfb-run sh -c "\
-  wine pip install --no-warn-script-location pyinstaller; \
+  wine pip install --no-warn-script-location pyinstaller MetaTrader5; \
   wineserver -w"
 
 ENTRYPOINT ["/opt/entrypoint.sh"]
