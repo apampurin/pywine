@@ -2,5 +2,7 @@ services:
   pywine:
     build: .
     image: pywinemt5
+    container_name: pywine
+    tty: true
     volumes:
       - ./scripts:/opt/scripts
