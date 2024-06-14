@@ -1,8 +1,11 @@
 services:
-  pywine:
+  pywinemt5:
     build: .
     image: pywinemt5
     container_name: pywine
-    tty: true
+#    tty: true
     volumes:
       - ./scripts:/opt/scripts
+      - ./metatrader:/opt/Metatrader
+    ports:
+      - 5900:5900
