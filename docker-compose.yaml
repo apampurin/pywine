@@ -2,7 +2,7 @@ services:
   pywinemt5:
     build: .
     image: pywinemt5
-    container_name: pywine
+    container_name: pywinemt5
 #    tty: true
     volumes:
       - ./scripts:/opt/scripts
